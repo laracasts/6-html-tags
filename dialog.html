@@ -1,0 +1,24 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Dialog</title>
+<script src="https://unpkg.com/alpinejs"></script>
+<style>
+    dialog::backdrop {
+        background: rgba(0,0,0,.6);
+    }
+</style>
+
+<div x-data>
+    <p>
+        <button @click="$refs.dialog.showModal()">Proceed</button>
+    </p>
+
+    <dialog x-ref="dialog">
+        <p>Are you sure about that?</p>
+
+        <div>
+            <button>Yes</button>
+            <button @click="$refs.dialog.close()">Cancel</button>
+        </div>
+    </dialog>
+</div>
